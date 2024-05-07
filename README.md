@@ -1,66 +1,81 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Quiz App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This app is a study project aimed at developing a tool for a local college to streamline the initial filtering of applicants. It helps save time by identifying applicants who meet the basic requirements, reducing the need for time-consuming one-on-one sessions with those who do not meet these requirements at an early stage.
 
-## About Laravel
+The purpose of this file is to follow a friend's advice to design software with a focus on structuring all underlying concepts before diving into implementation. By doing so, I aim to save time by avoiding unforeseen pitfalls.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Users
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Applicants
+- Teacher
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Scope
 
-## Learning Laravel
+This small project is designed to help a junior developer understand the entire scope of the software development process. It also showcases my approach to solving problems that arise with the development of any solution.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+My main focus will be backend development. The frontend is just there to make it useful for the local college to use, so for simplicity's sake I will use Blade and responsive templates I find online.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+I will however focus on clean code, TDD, and the best development practices known to me at the moment.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+I plan to deploy it in a server when all the features are developed.
 
-## Laravel Sponsors
+Frontend wireframe is availble in this repo as a pdf in the root folder.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Database
 
-### Premium Partners
+![](/quiz-app-db.drawio.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
 
-## Contributing
+# TDD
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- **Smoke Test**: A basic test to check if the app is functioning at a high level, ensuring no critical failures.
+- **Form Validation**: Tests to verify that form inputs meet the required rules and constraints.
+- **Authentication**: Tests to ensure users can log in and log out correctly.
+- **Authorization**: Tests to confirm that users have the appropriate access to resources based on their roles.
+- **Re-directs**: Tests to ensure the app redirects users to the correct pages or URLs under specific conditions.
+- **End-to-End Tests**: These simulate real-world scenarios to ensure the entire system functions as intended. They typically involve user flows and interactions with the app.
+- **Database Tests**: Tests to ensure database interactions work correctly, covering CRUD (Create, Read, Update, Delete) operations.
+- **Error Handling Tests**: Tests to verify that the app handles errors gracefully, with proper messaging and recovery mechanisms.
+- **Security Tests**: These tests focus on the app's security, checking for vulnerabilities like SQL injection, cross-site scripting (XSS), and others.
 
-## Code of Conduct
+# Basic flows
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+![](/quiz-app-flows.drawio.png)
 
-## Security Vulnerabilities
+# Tech-Stack
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Laravel
+- MySQL
+- PHPunit
+- Linux
+- Blade
+- Bootstrap
 
-## License
+# Features
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Login
+    - Form validation
+    - If the applicant has already taken the test show in login screen
+
+
+- Quiz
+    - Timer
+    - Multiple-choice
+    - One attempt only
+
+- Auto-grade
+
+- Quiz creator
+
+- Results list
+    - Highlight passed applicants
+    - Show date when quiz was taken
+
+- Applicant creation with safe password generation.
+
+
+> Signup will not be implemented due to the use of a Mailer feature, which is out of scope for this proyect. The applicant is created with its email and the app generates a safe password for the Teacher. The credentials are later sent to the applicant's email manually. (Loosely based on cPanel's email account generator).
+>
+> This also means that the Teacher is created first via the DB to then utilize the app's GUI for its intended use.
+
+### I understand that this app can be significantly improved, but to demonstrate my skills for job hunting, I chose to go with this design.
