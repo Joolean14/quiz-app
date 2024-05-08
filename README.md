@@ -89,27 +89,77 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
       - If the customer is not logged in, prompt them to log in or register.
 
 
-# Features
+# Use cases
 
-- Login
-    - Form validation
-    - If the applicant has already taken the test show in login screen
+## Login to app
+
+- Actor: Applicants & Teacher
+- Goal: Login to admin panel or to take test dashboard.
+- Steps:
+    1. Go to the quiz-app URL
+    1. Actor enters credentials
+    1. Actor logs in
+- Alternate flows:
+    - If the credentials are wrong, a message is displayed, or any validation specifications for that matter.
+    - If the actor is an applicant, forward to take test dashboard.
+    - If the actor is a teacher, take them to admin panel.
+    - If the applicant has already taken the test forward to login screen
+
+> One Attempt only
+
+## Take the Quiz
+
+- Actor: Applicants
+- Goal: Answer the questions defined by the teacher to see if he/she continues to the next application filter.
+- Steps: 
+    1. Login
+    1. Click on take test 
+    1. The timer starts in the background
+    1. Applicants answer the multiple choice questions before the timer ends.
+- Alternate flows:
+    - The timer ends and the answers are automatically sent to the server
+    - Applicant finishes answering the questions before the timer ends and sends them by clicking on the button
+    - Applicant leaves the app, closes window or action of some sort
+
+> Timer
+> Alert when quiz is not fully filled and applicant clicks send button
 
 
-- Quiz
-    - Timer
-    - Multiple-choice
-    - One attempt only
+## Grade the test
 
-- Auto-grade
+## Quiz Creator
 
-- Quiz creator
+## Result list Read
 
-- Results list
-    - Highlight passed applicants
-    - Show date when quiz was taken
+> Highlight passed applications
+> Show date and time when quiz was taken
 
-- Applicant creation with safe password generation.
+## Applicant creation
+
+> Automatic safe password generation
+
+## Design database
+
+## Create database
+
+## Find responsive blade tempplates
+
+## Make proyect run locally
+
+## Call Laravel API with Laravel's HTTP client not web routes
+
+## Apply security measures implemented by Laravel out of the box
+
+## Deploy proyect
+
+
+
+
+
+---
+
+
+## Disclaimer
 
 
 > Signup will not be implemented due to the use of a Mailer feature, which is out of scope for this proyect. The applicant is created with its email and the app generates a safe password for the Teacher. The credentials are later sent to the applicant's email manually. (Loosely based on cPanel's email account generator).
@@ -120,9 +170,10 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 
 # API mindset implementation
 
-- Inputs 
-
-- Outputs
+- Inputs & Outputs
+- Implementation
 
 # Why?
+
+> Programming is asking questions.
   
