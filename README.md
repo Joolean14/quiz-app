@@ -51,7 +51,6 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 - Blade
 - Bootstrap
 
-
 # Requirements engineering
 
 ### User Stories
@@ -88,6 +87,90 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
       - If the product is out of stock, show an appropriate message.
       - If the customer is not logged in, prompt them to log in or register.
 
+# NFRs
+
+## Design database
+
+Design the database in SQL.
+
+## Make proyect run locally
+
+Install Laravel 10 and run locally.
+
+## Implement database
+
+Implement the database
+
+## Find free responsive Dashboard blade templates
+
+Implement free Sneat blade template
+
+## Call Laravel API with Laravel's HTTP client not web routes
+
+Call the API from the frontend using Laravel's HTTP client.
+
+## Apply security measures implemented by Laravel out of the box
+
+### 1. **Use the Latest Version of Laravel**
+Keeping Laravel and its dependencies updated ensures that you're protected against known vulnerabilities. Regularly check for updates and security patches.
+
+### 2. **Environment Configuration**
+- **.env File**: Ensure your `.env` file is not publicly accessible. It contains sensitive information like database credentials and API keys. This file should be included in your `.gitignore` and never committed to source control.
+- **APP_ENV and APP_DEBUG**: Set `APP_ENV` to `production` and `APP_DEBUG` to `false` in production environments to avoid revealing sensitive information through debug output.
+
+### 3. **Secure Authentication and Authorization**
+- **Password Hashing**: Laravel uses Bcrypt for password hashing by default. Always store hashed passwords, never plain text.
+- **Multi-Factor Authentication (MFA)**: Consider implementing MFA for additional security.
+- **Authorization Policies and Gates**: Use Laravel's policies and gates to control user access to different parts of your application.
+
+### 4. **Protection Against Cross-Site Scripting (XSS)**
+- **Blade Templating**: Laravel's Blade templating engine automatically escapes data by default, protecting against XSS attacks.
+- **Sanitize User Input**: Always validate and sanitize user inputs, especially when rendering them on the frontend.
+
+### 5. **Protection Against Cross-Site Request Forgery (CSRF)**
+- **CSRF Tokens**: Laravel includes built-in protection against CSRF attacks. Ensure that your forms include CSRF tokens, and validate them on the server side.
+
+### 6. **Protection Against SQL Injection**
+- **Query Builder and Eloquent ORM**: Use Laravel's query builder or Eloquent ORM to prevent SQL injection. Avoid raw SQL queries unless absolutely necessary, and use parameterized queries when you do.
+
+### 7. **Secure File Uploads**
+- **File Validation**: Validate uploaded files based on their type, size, and other criteria.
+- **Storage Outside Web Root**: Store uploaded files outside the public web root to avoid direct access by users.
+- **Use Unique Filenames**: Generate unique filenames for uploaded files to prevent overwriting and ensure predictability.
+
+### 8. **Protection Against Session Hijacking**
+- **Session Management**: Use secure session management practices, including HTTPS-only cookies, secure session storage, and session timeout policies.
+- **Session Regeneration**: Regenerate session IDs after login to prevent session fixation.
+
+### 9. **Rate Limiting and Throttling**
+- **Rate Limiting**: Implement rate limiting to protect against denial-of-service (DoS) attacks and brute-force attacks.
+- **Throttle User Actions**: Throttle specific user actions, such as login attempts, to prevent abuse.
+
+### 10. **HTTPS and SSL/TLS**
+- **Enforce HTTPS**: Ensure that your application uses HTTPS to encrypt data in transit. Consider redirecting HTTP requests to HTTPS.
+- **SSL/TLS Configuration**: Use strong SSL/TLS configurations, ensuring proper certificate validation.
+
+### 11. **Security Headers**
+- **Content Security Policy (CSP)**: Implement CSP to control which sources are allowed to run scripts or load content.
+- **Other Security Headers**: Consider adding headers like `X-Content-Type-Options`, `X-Frame-Options`, and `X-XSS-Protection` to improve security.
+
+### 12. **Logging and Monitoring**
+- **Error Logging**: Log errors and monitor them for signs of potential attacks.
+- **Audit Logging**: Keep track of important user actions and changes to critical data.
+- **Monitoring Tools**: Use monitoring tools to detect unusual patterns or anomalies.
+
+## Deploy proyect
+
+Deploy proyect to Latin American Hosting or Railway.
+
+## Result list Read
+
+Show results from all applicants. 
+
+> Highlight passed applications
+> Show date and time when quiz was taken
+
+## Grade the test
 
 # Use cases
 
@@ -113,7 +196,7 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 - Goal: Answer the questions defined by the teacher to see if he/she continues to the next application filter.
 - Steps: 
     1. Login
-    1. Click on take test 
+    1. Click on take test in applicant's dashboard
     1. The timer starts in the background
     1. Applicants answer the multiple choice questions before the timer ends.
 - Alternate flows:
@@ -125,38 +208,32 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 > Alert when quiz is not fully filled and applicant clicks send button
 
 
-## Grade the test
-
 ## Quiz Creator
 
-## Result list Read
+- Actor: Teacher
+- Goal; Create questions for the applicants quiz
+- Steps: 
+    1. Login
+    1. Click on Quiz creator on Dashboard
+    1. Display all previously created questions. If no questions have created display corresponding message.
+    1. Click on edit of each question takes you to edit form.
+    1. Edit form can edit prompt, options and correct answer.
+- Alternate flows:
+    1. Go back to dashboard
 
-> Highlight passed applications
-> Show date and time when quiz was taken
 
 ## Applicant creation
 
-> Automatic safe password generation
-
-## Design database
-
-## Create database
-
-## Find responsive blade tempplates
-
-## Make proyect run locally
-
-## Call Laravel API with Laravel's HTTP client not web routes
-
-## Apply security measures implemented by Laravel out of the box
-
-## Deploy proyect
-
-
-
-
-
----
+- Actor: Teacher
+- Goal; Create applicants
+- Steps: 
+    1. Login
+    1. Click on Create Applicants Dashboard
+    1. Display all previously created Applicants. If no applicants have created display corresponding message.
+    1. Click on edit of each applicant takes you to edit form.
+    1. Edit form can edit email and password with automatic safe password generation.
+- Alternate flows:
+    1. Go back to dashboard
 
 
 ## Disclaimer
