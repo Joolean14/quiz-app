@@ -25,19 +25,6 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 
 ![](/quiz-app-db.drawio.png)
 
-
-# TDD
-
-- **Smoke Test**: A basic test to check if the app is functioning at a high level, ensuring no critical failures.
-- **Form Validation**: Tests to verify that form inputs meet the required rules and constraints.
-- **Authentication**: Tests to ensure users can log in and log out correctly.
-- **Authorization**: Tests to confirm that users have the appropriate access to resources based on their roles.
-- **Re-directs**: Tests to ensure the app redirects users to the correct pages or URLs under specific conditions.
-- **End-to-End Tests**: These simulate real-world scenarios to ensure the entire system functions as intended. They typically involve user flows and interactions with the app.
-- **Database Tests**: Tests to ensure database interactions work correctly, covering CRUD (Create, Read, Update, Delete) operations.
-- **Error Handling Tests**: Tests to verify that the app handles errors gracefully, with proper messaging and recovery mechanisms.
-- **Security Tests**: These tests focus on the app's security, checking for vulnerabilities like SQL injection, cross-site scripting (XSS), and others.
-
 # Basic flows
 
 ![](/quiz-app-flows.drawio.png)
@@ -89,25 +76,46 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 
 # NFRs
 
-## Design database
+## Find free responsive Dashboard blade templates
 
-Design the database in SQL.
+Implement free blade templates.
+
+> Try Sneat
 
 ## Make proyect run locally
 
 Install Laravel 10 and run locally.
 
+## Design database
+
+Design the database in SQL.
+
 ## Implement database
 
 Implement the database
 
-## Find free responsive Dashboard blade templates
+## Create CRUDs
 
-Implement free Sneat blade template
+Create CRUD operations for SQL tables.
 
 ## Call Laravel API with Laravel's HTTP client not web routes
 
 Call the API from the frontend using Laravel's HTTP client.
+
+## Test CRUDs with Bash script
+
+Write a Bash script to test CRUD using cURL
+
+## Result list Read
+
+Show results from all applicants. 
+
+> Highlight passed applications
+> Show date and time when quiz was taken
+
+## Grade the test
+
+Compare applicants answers with answers column to find the score. 
 
 ## Apply security measures implemented by Laravel out of the box
 
@@ -159,18 +167,13 @@ Keeping Laravel and its dependencies updated ensures that you're protected again
 - **Audit Logging**: Keep track of important user actions and changes to critical data.
 - **Monitoring Tools**: Use monitoring tools to detect unusual patterns or anomalies.
 
+## Refactor
+
+Look back at what could have been done better and refactor.
+
 ## Deploy proyect
 
 Deploy proyect to Latin American Hosting or Railway.
-
-## Result list Read
-
-Show results from all applicants. 
-
-> Highlight passed applications
-> Show date and time when quiz was taken
-
-## Grade the test
 
 # Use cases
 
@@ -190,6 +193,32 @@ Show results from all applicants.
 
 > One Attempt only
 
+## Quiz Creator
+
+- Actor: Teacher
+- Goal; Create questions for the applicants quiz
+- Steps: 
+    1. Login
+    1. Click on Quiz creator on Dashboard
+    1. Display all previously created questions. If no questions have created display corresponding message.
+    1. Click on edit of each question takes you to edit form.
+    1. Edit form can edit prompt, options and correct answer.
+- Alternate flows:
+    1. Go back to dashboard
+
+## Applicant creation
+
+- Actor: Teacher
+- Goal; Create applicants
+- Steps: 
+    1. Login
+    1. Click on Create Applicants Dashboard
+    1. Display all previously created Applicants. If no applicants have created display corresponding message.
+    1. Click on edit of each applicant takes you to edit form.
+    1. Edit form can edit email and password with automatic safe password generation.
+- Alternate flows:
+    1. Go back to dashboard
+
 ## Take the Quiz
 
 - Actor: Applicants
@@ -206,35 +235,6 @@ Show results from all applicants.
 
 > Timer
 > Alert when quiz is not fully filled and applicant clicks send button
-
-
-## Quiz Creator
-
-- Actor: Teacher
-- Goal; Create questions for the applicants quiz
-- Steps: 
-    1. Login
-    1. Click on Quiz creator on Dashboard
-    1. Display all previously created questions. If no questions have created display corresponding message.
-    1. Click on edit of each question takes you to edit form.
-    1. Edit form can edit prompt, options and correct answer.
-- Alternate flows:
-    1. Go back to dashboard
-
-
-## Applicant creation
-
-- Actor: Teacher
-- Goal; Create applicants
-- Steps: 
-    1. Login
-    1. Click on Create Applicants Dashboard
-    1. Display all previously created Applicants. If no applicants have created display corresponding message.
-    1. Click on edit of each applicant takes you to edit form.
-    1. Edit form can edit email and password with automatic safe password generation.
-- Alternate flows:
-    1. Go back to dashboard
-
 
 ## Disclaimer
 
@@ -253,4 +253,16 @@ Show results from all applicants.
 # Why?
 
 > Programming is asking questions.
+
+# TDD
+
+- **Smoke Test**: A basic test to check if the app is functioning at a high level, ensuring no critical failures.
+- **Form Validation**: Tests to verify that form inputs meet the required rules and constraints.
+- **Authentication**: Tests to ensure users can log in and log out correctly.
+- **Authorization**: Tests to confirm that users have the appropriate access to resources based on their roles.
+- **Re-directs**: Tests to ensure the app redirects users to the correct pages or URLs under specific conditions.
+- **End-to-End Tests**: These simulate real-world scenarios to ensure the entire system functions as intended. They typically involve user flows and interactions with the app.
+- **Database Tests**: Tests to ensure database interactions work correctly, covering CRUD (Create, Read, Update, Delete) operations.
+- **Error Handling Tests**: Tests to verify that the app handles errors gracefully, with proper messaging and recovery mechanisms.
+- **Security Tests**: These tests focus on the app's security, checking for vulnerabilities like SQL injection, cross-site scripting (XSS), and others.
   
