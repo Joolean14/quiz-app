@@ -230,3 +230,12 @@ Deploy proyect to Latin American Hosting or Railway.
 - **Error Handling Tests**: Tests to verify that the app handles errors gracefully, with proper messaging and recovery mechanisms.
 - **Security Tests**: These tests focus on the app's security, checking for vulnerabilities like SQL injection, cross-site scripting (XSS), and others.
   
+# Notes
+
+- Learn from Breeze:
+    - How they use unit tests
+    - How they use login
+    - How they use the frontend
+    - Remember you are going to call the API using an HTTP client.
+
+- After installing Laravel Breeze to learn from an optimized and clean code, I think it might be better to use more of a 'Breeze style' user management for applicants and then enable them from a Teacher role to prevent anybody using fake emails.
