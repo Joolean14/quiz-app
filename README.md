@@ -38,42 +38,6 @@ Frontend wireframe is availble in this repo as a pdf in the root folder.
 - Blade
 - Bootstrap
 
-# Requirements engineering
-
-### User Stories
-- **Definition**: User stories are short, simple descriptions of a feature or requirement told from the perspective of an end-user. They typically follow the format: "As a [type of user], I want [some action], so that [some outcome]."
-- **Purpose**: User stories capture user needs in a simple and straightforward manner, focusing on what the user wants to achieve and why.
-- **Creating User Stories**:
-  - Identify the types of users (personas) who will interact with your software.
-  - Talk to stakeholders, customers, or end-users to understand their needs.
-  - Write user stories based on these discussions. For example:
-    - "As a student, I want to submit assignments online, so that I don't have to bring physical copies."
-    - "As a customer, I want to track my order, so that I know when it will be delivered."
-- **Refining User Stories**:
-  - Break down large user stories into smaller, manageable tasks.
-  - Define acceptance criteria to clarify the expected outcome for each story.
-  - Prioritize user stories based on business goals and user needs.
-
-### Use Cases
-- **Definition**: Use cases are detailed scenarios that describe how users interact with the system to achieve specific goals. They often include a step-by-step sequence of actions.
-- **Purpose**: Use cases help to map out user interactions with the software, providing a more detailed view of user requirements and system behavior.
-- **Creating Use Cases**:
-  - Define the actors (users or systems) involved in the interaction.
-  - Describe the goal or purpose of the use case.
-  - Outline the main scenario or flow, detailing the steps involved.
-  - Include variations or alternate flows to cover edge cases or exceptions.
-- **Example**:
-  - Use Case: "Add a Product to Cart"
-    - Actor: Customer
-    - Goal: Add a product to the shopping cart
-    - Steps:
-      1. Customer navigates to the product page.
-      2. Customer clicks "Add to Cart."
-      3. The product is added to the shopping cart.
-    - Alternate Flows:
-      - If the product is out of stock, show an appropriate message.
-      - If the customer is not logged in, prompt them to log in or register.
-
 # NFRs
 
 ## Find free responsive Dashboard blade templates
